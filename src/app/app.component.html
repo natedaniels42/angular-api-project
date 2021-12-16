@@ -1,6 +1,8 @@
 <h1>Hi</h1>
-<plotly-plot
-[data]="graph2.data"
-[layout]="graph2.layout"
-[useResizeHandler]="true"></plotly-plot>
+<label for="start-date">Start Date: </label>
+<input type="date" name="start-date" #startDate>
+<label for="end-date">End Date: </label>
+<input type="date" name="end-date" #endDate>
+<button (click)="search(startDate.value, endDate.value)">Search</button>
+
 
