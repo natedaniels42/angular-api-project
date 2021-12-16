@@ -4,5 +4,6 @@
 <label for="end-date">End Date: </label>
 <input type="date" name="end-date" #endDate>
 <button (click)="search(startDate.value, endDate.value)">Search</button>
+<chart [data]="data" [x]="x" [y]="y" [graph]="graph"></chart>
 
 
