@@ -1,7 +1,6 @@
 <div id="chart" *ngIf="data.length > 0">
-    <plotly-plot
+    <plotly-plot id="graph-inner"
       [data]="graph.data"
       [layout]="graph.layout"
       [useResizeHandler]="true"></plotly-plot>
 </div>
-<button (click)="onClick()">Click</button>

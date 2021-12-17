@@ -1,9 +1,20 @@
-<h1>Hi</h1>
-<label for="start-date">Start Date: </label>
-<input type="date" name="start-date" #startDate>
-<label for="end-date">End Date: </label>
-<input type="date" name="end-date" #endDate>
-<button (click)="search(startDate.value, endDate.value)">Search</button>
-<chart [data]="data" [x]="x" [y]="y" [graph]="graph"></chart>
-
-
+<div id="info-box">
+  <h1>Movie Ratings Search</h1>
+  <p *ngIf="!begin">Click the button to search for movies that premired within a specific date range and 
+    see the IMDB and TMDB average ratings for the selected movies:</p>
+  <button id="new" *ngIf="!active" (click)="active = true; begin = true">New Search</button>
+</div>
+<div *ngIf="active" id="date-search">
+  <label for="start-date">Start Date: </label>
+  <input type="date" name="start-date" #startDate (keydown)="onKeydown()">
+  <label for="end-date">End Date: </label>
+  <input type="date" name="end-date" #endDate (keydown)="onKeydown()">
+  <button (click)="search(startDate.value, endDate.value)">Search</button>
+</div>
+<images 
+  [images]="images" 
+  [data]="data" 
+  [index1]="index1" 
+  [index2]="index2" 
+  [index3]="index3"></images>
+<chart [data]="data" [graph]="graph"></chart>

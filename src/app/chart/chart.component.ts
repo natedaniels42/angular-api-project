@@ -23,13 +23,6 @@ export class ChartComponent implements OnInit {
   
   constructor() { }
 
-  onClick() {
-    console.log(this.data);
-    console.log(this.x);
-    console.log(this.y);
-    console.log(this.graph);
-  }
-
   ngOnInit(): void {
   }
 

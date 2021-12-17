@@ -1,0 +1,10 @@
+#image-container {
+    display: flex;
+    margin: 20px;
+    max-height: 50vh;
+}
+
+img {
+    object-fit: cover;
+    width: 33%;
+}

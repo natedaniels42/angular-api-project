@@ -1,0 +1,82 @@
+#info-box {
+    width: 50%;
+    margin: 50px auto;
+}
+
+#new {
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px grey, inset -4px -4px 5px lightgrey;
+}
+
+#new:active {
+    box-shadow: inset 4px 4px 5px grey;
+}
+
+#date-search {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(140, 205, 231, 0.7);
+    box-shadow: 0px 10px 13px -7px #000000, 5px -50px 15px -6px rgba(221,221,221,0), inset 5px 5px 5px #ddd, inset -5px -5px 5px #aaa;
+    
+    input {
+        margin: 1%;
+        padding: 1%;
+        border-radius: 5px;
+    }
+    
+    input:focus {
+        background-color: rgba(237, 243, 245, 0.7);
+    }
+
+    button {
+        width: 25%;
+        padding: 2%;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px grey, inset -4px -4px 5px lightgrey;
+    }
+
+    button:active {
+        box-shadow: inset 4px 4px 5px grey;
+    }
+}
+
+.colors {
+    width: 600px;
+    height: 100px;
+    display: flex;
+}
+
+.colors div {
+    width: 100px;
+    height: 100px;
+}
+
+#color1 {
+    background-color: rgb(255, 0, 0);
+}
+
+#color2 {
+    background-color: rgb(238, 88, 88);
+}
+
+#color3 {
+    background-color: rgba(128, 128, 128, 0.596);
+}
+
+#color4 {
+    background-color: rgba(211, 211, 211, 0.61);
+}
+
+#color5 {
+    background-color: rgb(68, 148, 68);
+}
+
+#color6 {
+    background-color: rgb(103, 241, 103);
+}

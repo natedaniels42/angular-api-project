@@ -9,13 +9,15 @@ import { PlotlyModule } from 'angular-plotly.js';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
+import { ImagesComponent } from './images/images.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,

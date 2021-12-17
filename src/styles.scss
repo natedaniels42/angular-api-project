@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+html, button, input {
+    line-height: 1.5rem;
+    letter-spacing: .1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-family: 'Shalimar', cursive;
+    font-size: 4rem;
+}
