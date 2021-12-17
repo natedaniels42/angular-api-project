@@ -1,0 +1,13 @@
+<div id="movie-detail" *ngIf="currentMovie.title">
+    <div id="left">
+        <h2>{{currentMovie.title}}</h2>
+        <p>{{currentMovie.genres}}</p>
+        <p>Run time: {{currentMovie.runtimeStr}} minutes</p>
+        <p>Starring: {{currentMovie.stars}}</p>
+        <p>{{currentMovie.plot}}</p>
+        <button (click)="clearCurrentMovie()">Close Movie Detail</button>
+    </div>
+    <div id="right">
+        <img src={{currentMovie.image}} alt={{currentMovie.title}}>
+    </div>
+</div>

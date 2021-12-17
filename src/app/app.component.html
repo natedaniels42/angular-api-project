@@ -1,3 +1,27 @@
+<header>
+  <nav>
+    <div id="nav-left">
+      <img src="assets/images/camera.png" alt="movie camera icon" width="40px">
+      <h2>Nate's Movie Search</h2>
+    </div>
+    <div id="nav-right">
+      <ul>
+        <li *ngIf="data.length > 0">
+          <a href="#chart">Ratings</a>
+        </li>
+        <li *ngIf="currentMovie.title" >
+          <a href="#movie-detail">Details</a>
+        </li>
+        <li *ngIf="images.length > 0">
+          <a href="#image-container">Images</a>
+        </li>
+        <li>
+          <a href="#info-box">Search</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 <div id="info-box">
   <h1>Movie Ratings Search</h1>
   <p *ngIf="!begin">Click the button to search for movies that premired within a specific date range and 
@@ -16,5 +40,6 @@
   [data]="data" 
   [index1]="index1" 
   [index2]="index2" 
-  [index3]="index3"></images>
+  [index3]="index3"
+  (movieEvent)="getMovie($event)"></images>
 <chart [data]="data" [graph]="graph"></chart>

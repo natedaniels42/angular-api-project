@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from './movie.service';
 
+import { Movie } from './movie';
 import { Graph } from './graph';
 
 @Component({
@@ -17,7 +18,7 @@ export class AppComponent {
   index3: number = 2;
   images: string[] = [];
   data: Array<any> = [];
-  currentMovie: {} = {};
+  currentMovie: Movie = new Movie('','','','','','','');
   graph: Graph = {
     data: [
       {
@@ -70,6 +71,7 @@ export class AppComponent {
   search(start: string, end: string) {
     this.movieService.searchMovies(start, end)
       .then(async (response: any) => {
+        console.log(response);
         const filteredResults = response.results.filter((movie: any) => movie.imDbRating);
         this.data = filteredResults;
         console.log(filteredResults);
@@ -108,6 +110,11 @@ export class AppComponent {
 
   onKeydown() {
     return false;
+  }
+
+  getMovie(value: Movie) {
+    this.currentMovie = value;
+    console.log(this.currentMovie);
   }
 
   ngOnInit() {

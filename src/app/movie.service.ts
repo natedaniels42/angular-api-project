@@ -10,7 +10,7 @@ export class MovieService {
 
   public searchMovies (beginDate:string, endDate: string) {
     return new Promise((resolve, reject) => {
-      this.http.get(`https://imdb-api.com/API/AdvancedSearch/k_v3wop9a5?title_type=feature&release_date=${beginDate},${endDate}&countries=us&languages=en`).subscribe(
+      this.http.get(`https://imdb-api.com/API/AdvancedSearch/k_cl71v7jm?title_type=feature&release_date=${beginDate},${endDate}&countries=us&languages=en`).subscribe(
         (response) => {
           resolve(response);
         }, (err) => {

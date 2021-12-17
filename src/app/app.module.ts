@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
 import { ImagesComponent } from './images/images.component';
+import { MovieDisplayComponent } from './movie-display/movie-display.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -17,7 +18,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
   declarations: [
     AppComponent,
     ChartComponent,
-    ImagesComponent
+    ImagesComponent,
+    MovieDisplayComponent
   ],
   imports: [
     BrowserModule,
