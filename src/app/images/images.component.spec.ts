@@ -22,4 +22,12 @@ describe('ImagesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display image container if there is data', () => {
+    component.data = [{image: 'ase'}, {image: 'aas'}, {image: 'dede'}];
+    fixture.detectChanges();
+    
+    const imageContainer = document.getElementById('image-container');
+    expect(imageContainer).toBeTruthy();
+  })
 });

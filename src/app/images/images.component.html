@@ -1,7 +1,7 @@
-<div id="image-container" *ngIf="data">
-    <img (click)="setCurrentMovie($event)" src={{data[index1].image}} alt={{data[index1].title}}>
-    <img (click)="setCurrentMovie($event)" src={{data[index2].image}} alt={{data[index2].title}}>
-    <img (click)="setCurrentMovie($event)" src={{data[index3].image}} alt={{data[index3].title}}>
+<div id="image-container" *ngIf="data.length > 0">
+    <img (click)="setCurrentMovie($event)" src="{{data[index1].image}}" alt="{{data[index1].title}}">
+    <img (click)="setCurrentMovie($event)" src="{{data[index2].image}}" alt="{{data[index2].title}}">
+    <img (click)="setCurrentMovie($event)" src="{{data[index3].image}}" alt="{{data[index3].title}}">
 </div>
 <div id="display-container">
     <movie-display [currentMovie]="currentMovie"></movie-display>

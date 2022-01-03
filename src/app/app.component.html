@@ -5,17 +5,17 @@
       <h2>Nate's Movie Search</h2>
     </div>
     <div id="nav-right">
-      <ul>
-        <li *ngIf="data.length > 0">
+      <ul id="nav-links">
+        <li id="link1" class="nav-link" *ngIf="data.length > 0">
           <a href="#chart">Ratings</a>
         </li>
-        <li *ngIf="currentMovie.title" >
+        <li id="link2" class="nav-link" *ngIf="currentMovie.title" >
           <a href="#movie-detail">Details</a>
         </li>
-        <li *ngIf="images.length > 0">
+        <li id="link3" class="nav-link" *ngIf="images.length > 0">
           <a href="#image-container">Images</a>
         </li>
-        <li>
+        <li id="link4" class="nav-link" *ngIf="data.length > 0">
           <a href="#info-box">Search</a>
         </li>
       </ul>
@@ -28,12 +28,13 @@
     see the IMDB and TMDB average ratings for the selected movies:</p>
   <button id="new" *ngIf="!active" (click)="active = true; begin = true">New Search</button>
 </div>
+<p *ngIf="loading">{{loadingText}}</p>
 <div *ngIf="active" id="date-search">
   <label for="start-date">Start Date: </label>
   <input type="date" name="start-date" #startDate (keydown)="onKeydown()">
   <label for="end-date">End Date: </label>
   <input type="date" name="end-date" #endDate (keydown)="onKeydown()">
-  <button (click)="search(startDate.value, endDate.value)">Search</button>
+  <button (click)="search(startDate.value, endDate.value); loading = true">Search</button>
 </div>
 <images 
   [images]="images" 

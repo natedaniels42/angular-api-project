@@ -22,7 +22,8 @@ export class ImagesComponent implements OnInit {
 
   setCurrentMovie($event: Event) {
     const movieData = this.data.find(movie => movie.image === ($event.target as HTMLImageElement).src) 
-    this.currentMovie = new Movie(movieData.title, 
+    this.currentMovie = new Movie(
+      movieData.title, 
       movieData.genres,
       movieData.runtimeStr,
       movieData.imDbRating,

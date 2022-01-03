@@ -22,4 +22,12 @@ describe('ChartComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display section if there is data', () => {
+    component.data = ['1', '2', '3'];
+    fixture.detectChanges();
+
+    const chart = document.getElementById('chart');
+    expect(chart).toBeTruthy();
+  })
 });

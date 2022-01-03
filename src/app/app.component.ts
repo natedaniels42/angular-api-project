@@ -10,9 +10,10 @@ import { Graph } from './graph';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'angular-api-project';
   active: boolean = false;
   begin: boolean = false;
+  loading: boolean = false;
+  loadingText: string = 'Loading'
   index1: number = 0;
   index2: number = 1;
   index3: number = 2;
@@ -69,6 +70,14 @@ export class AppComponent {
   constructor(private movieService: MovieService) {  }
 
   search(start: string, end: string) {
+    this.loading = true;
+    const loadingTimer = setInterval(() => {
+      if (this.loadingText.length < 10) {
+        this.loadingText += '.';
+      } else {
+        this.loadingText = 'Loading';
+      }
+    }, 1000)
     this.movieService.searchMovies(start, end)
       .then(async (response: any) => {
         console.log(response);
@@ -78,8 +87,13 @@ export class AppComponent {
         this.graph.data[0].x = filteredResults.map((movie: any) => movie.title);
         this.graph.data[0].y = filteredResults.map((movie: any) => movie.imDbRating);
         this.graph.data[0].marker.color = filteredResults.map((movie: any) => movie.imDbRating < 4 ? 'rgb(255, 0, 0)' : movie.imDbRating < 7 ? 'rgba(128, 128, 128, 0.596)' : 'rgb(68, 148, 68)')
+        const startDate = new Date(start).toDateString();
+        const endDate = new Date(end).toDateString();
+        this.graph.layout.title = `Movie Ratings: Release Date (${startDate}-${endDate})`
         this.images = filteredResults.map((movie: any) => movie.image);
-        
+        clearInterval(loadingTimer);
+        this.loadingText = 'Loading';
+        this.loading = false;
         let resultsArr = [];
         
         for (let movie of filteredResults) {
@@ -98,7 +112,7 @@ export class AppComponent {
         this.graph.data[1].x = resultsArr.map(data => data.x);
         this.graph.data[1].y = resultsArr.map(data => data.y);
         this.graph.data[1].marker.color = resultsArr.map(data => data.color);
-        
+
         const imageInterval = setInterval(() => {
           this.index3 < this.images.length - 1 ? this.index3++ : this.index3 = 0;
           this.index2 < this.images.length - 1 ? this.index2++ : this.index2 = 0;

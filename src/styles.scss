@@ -12,6 +12,10 @@ html, button, input {
     scroll-behavior: smooth;
 }
 
+button {
+    cursor: pointer;
+}
+
 h1 {
     font-family: 'Shalimar', cursive;
     font-size: 4rem;

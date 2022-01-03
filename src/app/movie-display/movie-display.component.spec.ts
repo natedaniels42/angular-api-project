@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovieDisplayComponent } from './movie-display.component';
+import { Movie } from '../movie';
 
 describe('MovieDisplayComponent', () => {
   let component: MovieDisplayComponent;
@@ -22,4 +23,11 @@ describe('MovieDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display page if current movie has a title', () => {
+    component.currentMovie = new Movie ('Forrest Gump','','','','','','');
+    fixture.detectChanges();
+    const movieDetail = document.getElementById('movie-detail');
+    expect(movieDetail).toBeTruthy();
+  })
 });
